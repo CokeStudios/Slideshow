@@ -31,9 +31,9 @@ public final class StaticTextureProvider implements TextureProvider {
         try (NativeImage image = NativeImage.read(buffer)) {
             mWidth = image.getWidth();
             mHeight = image.getHeight();
-            if (mWidth > MAX_TEXTURE_SIZE || mHeight > MAX_TEXTURE_SIZE) {
-                throw new IOException("Image is too big: " + mWidth + "x" + mHeight);
-            }
+            // if (mWidth > MAX_TEXTURE_SIZE || mHeight > MAX_TEXTURE_SIZE) {
+                // throw new IOException("Image is too big: " + mWidth + "x" + mHeight);
+            // }
             final int maxLevel = Math.min(31 - Integer.numberOfLeadingZeros(Math.max(mWidth, mHeight)), 4);
 
             mTexture = GlStateManager._genTexture();
